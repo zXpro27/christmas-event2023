@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  max-width: 600px;
+  font-family: andrgin;
+  background-color: #333;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(0.5) rotate(-3deg);
+  }
+  
+  50% {
+    transform: scale(0.8) rotate(5deg);
+  }
+  
+  100% {
+    transform: scale(0.9) rotate(0deg);
+  }
+}
+@keyframes shake {
+   0% { transform: translate(1px, 1px)  scale(0.4) rotate(0deg); }
+  10% { transform: translate(-1px, -2px)  scale(0.5) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) scale(0.5) rotate(1deg); }
+  30% { transform: translate(3px, 2px) scale(0.6) rotate(0deg); }
+  40% { transform: translate(1px, -1px) scale(0.7) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) scale(0.6) rotate(-1deg); }
+  100% { transform: translate(1px 1px) scale(0.5) rotate(0deg); }
+}
+
+
+
+#fs-frm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-box {
+  display: flex;
+  gap: 1rem;
+}
+#fs-frm #fs-frm-inputs {
+  display: none;
+}
+
+#btn {
+  position: absolute;
+  left: 27%;
+  bottom: 2%;
+  translate: translate(-27%,0);
+  outline: none;
+  border: none;
+  padding: 15px 20px;
+  background: url("images/natal/btn.png") center no-repeat;
+  background-size: cover;
+  text-align: center;
+  transition: all .3s;
+  cursor: pointer;
+  z-index: 20;
+}
+#btn:active {
+  transform: scale(0.9);
+}
+#btn p {
+  position: relative;
+  top: 5px;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+/* Giveaway Natal 2023*/ 
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  background: url("images/natal/snow.jpeg") center no-repeat;
+  background-size: cover;
+}
+.content .balon {
+  width: 100%;
+  height: 90px;
+  background: url("images/natal/balon.png") center no-repeat;
+  background-size: cover;
+}
+
+.content .music {
+  position: absolute;
+  left: 40%;
+  top: 1%;
+  transform: translate(-40%,0);
+  width: 60px;
+  height: 100px;
+  background: url("images/natal/music.png") center no-repeat;
+  background-size: cover;
+  transform: scale(0.7) rotate(0);
+  z-index: 5;
+  animation: shake .7s ease-in infinite;
+}
+
+.content .title {
+  width: 90%;
+  height: 98px;
+  margin: 10px auto;
+  transform: scale(0.9) rotate(0);
+  background: url("images/natal/title.png") center no-repeat;
+  background-size: cover;
+  transition: all .3s linear;
+  animation: rotate 1s ease-in-out;
+}
+.content .title:hover {
+  transform: scale(0.85) rotate(-5deg);
+}
+
+.content h1 {
+  color: #1A7633;
+  font-size: 19px;
+  font-weight: 800;
+  font-weight: arial;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.content .aksesoris {
+  position: relative;
+  width: 100%;
+  height: 433px;
+  background: transparent;
+}
+.content .aksesoris .pohon {
+  position: absolute;
+  right: -80px;
+  bottom: 10%;
+  width: 300px;
+  height: 360px;
+  background: url("images/natal/natal.png") center no-repeat;
+  background-size: cover;
+}
+.content .aksesoris .orang {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%,0);
+  width: 200px;
+  height: 400px;
+  background: url("images/natal/santa.png") center no-repeat;
+  background-size: cover;
+}
+.content .aksesoris .tiang, .content .aksesoris .tiang2 {
+  position: absolute;
+  
+  width: 100px;
+  height: 450px;
+  background: url("images/natal/tiang.png") center no-repeat;
+  background-size: cover;
+  z-index: 10;
+}
+.content .aksesoris .tiang {
+  left: -30px;
+  bottom: 10px;
+}
+.content .aksesoris .tiang2 {
+  right: -33px;
+  bottom: 10px;
+}
+
+.content .aksesoris .reward {
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  transform: translate(-50%, 0);
+  width: 280px;
+  height: 300px;
+  background: url("");
+  /*background: rgba(0, 0, 0, 0.8);*/
+  backdrop-filter: blur(5px);
+  border-radius: 19px;
+  overflow: hidden;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.aksesoris .reward .box {
+  width: 140px;
+  height: 140px;
+  border: thick double #6AD2FD;
+  border-radius: 8px;
+  z-index: 20;
+  transform: scale(0.9);
+  transition: .3s ease;
+}
+.reward .box {
+  background: url("images/natal/kado.png") center no-repeat;
+  background-size: cover;
+}
+.reward .box:nth-child(2) {
+  background: url("images/natal/ijo.png") center no-repeat;
+  background-size: cover;
+}
+.reward .box:nth-child(3) {
+  background: url("images/natal/gold.png") center no-repeat;
+  background-size: cover;
+}
+.reward .box:nth-child(4) {
+  background: url("images/natal/ungu.png") center no-repeat;
+  background-size: cover;
+}
+.reward .box:hover {
+  transform: scale(0.8);
+}
+
+
+/* Nabung Mclaren 720s
+.container {
+  width: 100%;
+  height: 630px;
+  color: #fff;
+  background: #222;
+  border-radius: 24px;
+  border: 1px solid #f7f7f7;
+  overflow: hidden;
+}
+
+.container .img__box {
+  width: 100%;
+  height: 180px;
+  background: pink;
+}
+.container .img__box img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .price__head {
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.price__head .price__title {
+  width: 70%;
+}
+.price__title p:nth-child(1) {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.price__title p:nth-child(2) {
+  font-size: 16px;
+  color: #f1f1f1;
+}
+.price__head .presentase {
+  width: 60px;
+  color: #F6E7F1;
+  text-align: center;
+  height: 60px;
+  line-height: 57px;
+  font-size: 18px;
+  border: 2px solid #83FF5B;
+  border-radius: 50%;
+}
+
+.container .description {
+  position: relative;
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.description:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translate(-50%,0);
+  width: 90%;
+  height: 4px;
+  margin: 10px auto;
+  background: #5E5757;
+  border-radius: 21px;
+}
+.desc__text {
+  width: 50%;
+}
+.desc__text p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.desc__angka {
+  width: 50%;
+  text-align: right;
+}
+.desc__angka p {
+  margin-bottom: 10px;
+}
+
+
+.container .info {
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px 15px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.info__terkumpul {
+  width: 50%;
+  padding: 10px 2px;
+  color: #1E3D1C;
+  background: #7ADC74;
+  border-radius: 10px;
+}
+.info__terkumpul p:nth-child(2) {
+  margin-top: 5px;
+}
+.info__kurang {
+  width: 50%;
+  padding: 10px 2px;
+  background: #DD0909;
+  border-radius: 10px;
+}
+.info__kurang p:nth-child(2) {
+  margin-top: 5px;
+}
+
+.riwayat {
+  width: 300px;
+  height: 160px;
+  margin: 10px auto;
+  padding: 10px;
+  background: #000;
+  border-radius: 8px;
+  overflow: scroll; 
+}
+
+.riwayat h2 {
+  display: none;
+  text-align: center;
+  margin-top: 2.5rem;
+  opacity: 0.6;
+}
+
+.riwayat .title__riwayat {
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  text-transform: capitalize;
+  background: #333;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title__riwayat h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.riwayat .box__riwayat {
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box__riwayat .info__tgl {
+  color: #F2F2F2;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.box__riwayat .info__tgl p:nth-child(2) {
+  margin-top: 10px;
+  color: #FDFF7D;
+}
+.box__riwayat .info__angka {
+  font-size: 15px;
+}
+.box__riwayat .info__angka p {
+  color: #83FF5B;
+}
+*/
+
+
+
+
+
+
+
